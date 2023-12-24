@@ -6,8 +6,8 @@
   "module": "dist/es/index.js",
   "umd:main": "dist/umd/index.js",
   "typings": "src/index.ts",
-  "homepage": "https://github.com/wacky-idea/web-utils#readme",
-  "description": "react常用组件",
+  "homepage": "https://github.com/wacky-idea/ReactComponents#readme",
+  "description": "react 常用组件",
   "directories": {
     "src": "src",
     "test": "test"
@@ -20,14 +20,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wacky-idea/web-utils.git"
+    "url": "git+https://github.com/wacky-idea/ReactComponents.git"
   },
   "keywords": [
-    "tool",
+    "react",
+    "components",
     "utils"
   ],
   "bugs": {
-    "url": "https://github.com/wacky-idea/web-utils/issues"
+    "url": "https://github.com/wacky-idea/ReactComponents/issues"
   },
   "scripts": {
     "build": "rollup -c",
