@@ -71,12 +71,12 @@ export const CanvasPlayer = (props: CanvasPlayerProps) => {
 
     canvasELE.width = canvasWidth
     canvasELE.height = canvasHeight
-    console.log("info", {
-      sourceWidth,
-      sourceHeight,
-      canvasWidth,
-      canvasHeight
-    })
+    // console.log("info", {
+    //   sourceWidth,
+    //   sourceHeight,
+    //   canvasWidth,
+    //   canvasHeight
+    // })
 
     ctx?.restore()
     ctx?.save()
@@ -302,7 +302,7 @@ export const CanvasPlayer = (props: CanvasPlayerProps) => {
         }
       }
     }
-    console.log(renderType, direction, JSON.stringify(data))
+    // console.log(renderType, direction, JSON.stringify(data))
   }
 
   useEffect(() => {
