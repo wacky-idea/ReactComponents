@@ -34,7 +34,9 @@ module.exports = {
   ],
   plugins: [
     postcss({
-      extensions: ['.less']
+      extensions: ['.less'],
+      // 压缩 css
+      minimize: true
     }),
     typescript()
   ]
