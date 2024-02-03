@@ -1,5 +1,5 @@
 const packageConfig = require('./package.json')
-const typescript = require('rollup-plugin-typescript2')
+const typescript = require('@rollup/plugin-typescript')
 const postcss = require('rollup-plugin-postcss')
 
 const copyright = `/*! ${packageConfig.name} v${packageConfig.version} | (c) ${new Date().getFullYear()} ${packageConfig.author} | Released under the ${packageConfig.license} License */`;
@@ -38,6 +38,13 @@ module.exports = {
       // 压缩 css
       minimize: true
     }),
-    typescript()
+    typescript({
+      compilerOptions: {
+        lib: ["es5", "es6", "dom"],
+        target: "es2015"
+      },
+      declaration: true,
+      declarationDir: './',
+    })
   ]
 };
