@@ -5,20 +5,36 @@
  * @param {HTMLIFrameElement} ele
  */
 export function attrCompatible(ele: HTMLIFrameElement) {
-  if ('orientation' in window) {
-    handleOrientation(ele)
+  if ('orientation' in screen) {
+    handleScreenOrientation(ele)
+  } else if ('orientation' in window) {
+    handleWindowOrientation(ele)
   } else if ('matchMedia' in window) {
     handleMatchMedia(ele);
   }
 }
 
 /**
- * 使用 orientation 横竖屏切换
+ * 使用 screen.orientation 横竖屏切换
  *
  * @export
  * @param {HTMLIFrameElement} ele
  */
-export function handleOrientation(ele: HTMLIFrameElement) {
+export function handleScreenOrientation(ele: HTMLIFrameElement) {
+  if (screen.orientation.type === 'landscape-primary' || screen.orientation.type === 'landscape-secondary') {
+    setEleLandscape(ele)
+  } else {
+    setElePortrait(ele)
+  }
+}
+
+/**
+ * 使用 window.orientation 横竖屏切换
+ *
+ * @export
+ * @param {HTMLIFrameElement} ele
+ */
+export function handleWindowOrientation(ele: HTMLIFrameElement) {
   if (window.orientation === 90 || window.orientation === -90) {
     // 横屏
     // 设置容器宽高
